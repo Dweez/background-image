@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.card {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: .5rem 1rem;
+}
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+button {
+  border: 3px solid #56cdad;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  color: #56cdad;
+  background-color: #fff;
+  box-shadow: 0 0 5px #000;
+  cursor: pointer;
+  margin: 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}

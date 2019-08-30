@@ -1,0 +1,36 @@
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+
+import BackgroundImage from "./components/background-image";
+
+import "./styles.css";
+
+function App() {
+  const [src, setSrc] = useState("https://source.unsplash.com/featured/?skate");
+
+  const refresh = () => {
+    // we deliberately delay loading the new image so that our beautiful spinner is visible :)
+    setSrc("");
+    setTimeout(
+      () =>
+        setSrc(
+          `https://source.unsplash.com/featured/?skate&ts=${new Date().getTime()}`
+        ),
+      600
+    );
+  };
+
+  return (
+    <div className="App">
+      <BackgroundImage src={src} opacity=".6" color="#56cdad">
+        {/*<div className="card"><h2>Your content here</h2></div>*/}
+      </BackgroundImage>
+      <div className="menu">
+        <button onClick={refresh}>refresh</button>
+      </div>
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
