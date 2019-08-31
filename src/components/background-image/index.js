@@ -12,7 +12,8 @@ const BackgroundImage = props => {
     width,
     height,
     radius,
-    position
+    position,
+    size
   } = props;
   const [loading, setLoading] = useState(true);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
@@ -30,7 +31,7 @@ const BackgroundImage = props => {
   const [bgStyle, setBgStyle] = useState({
     // background: `url(${src}) no-repeat center center fixed`,
     background: `url(${src}) no-repeat center center`,
-    backgroundSize: "cover", // cover|auto|contain
+    backgroundSize: size, // cover|auto|contain
     width: width,
     height: height,
     borderRadius: radius
@@ -71,9 +72,9 @@ const BackgroundImage = props => {
       }
       image.current.style.transition = `opacity ${transition}`;
       image.current.style.opacity = opacity;
-      image.current.style.backgroundSize = "cover"; // cover|auto|contain
+      image.current.style.backgroundSize = size; // cover|auto|contain
     }
-  }, [loading, transition, opacity, width, dimension]);
+  }, [loading, transition, opacity, width, dimension, size]);
 
   return (
     <div className="bgContainer" style={bgContainerStyle}>
@@ -92,13 +93,14 @@ const BackgroundImage = props => {
 
 BackgroundImage.defaultProps = {
   src: "",
-  position: "absolute",
-  width: "100%",
-  height: "100%",
+  position: "relative",
+  width: "300px",
+  height: "300px",
   opacity: 1,
   color: "#ccc",
   transition: "1s",
-  radius: 0
+  radius: 0,
+  size: "cover"
 };
 
 export default BackgroundImage;

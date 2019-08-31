@@ -22,7 +22,13 @@ function App() {
 
   return (
     <div className="App">
-      <BackgroundImage src={src} opacity=".6" color="#56cdad">
+      <BackgroundImage
+        src={src}
+        opacity=".6"
+        color="#56cdad"
+        width="100%"
+        height="100vh"
+      >
         {/*<div className="card"><h2>Your content here</h2></div>*/}
       </BackgroundImage>
       <div className="menu">
