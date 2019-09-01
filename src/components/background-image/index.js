@@ -17,6 +17,7 @@ const BackgroundImage = props => {
   } = props;
   const [loading, setLoading] = useState(true);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const [error, setError] = useState(false);
 
   const ghost = useRef();
   const image = useRef();
@@ -60,6 +61,14 @@ const BackgroundImage = props => {
 
         setLoading(false);
       };
+      ghost.current.onerror = () => {
+          setLoading(false);
+          setBgStyle(prev => ({
+            ...prev,
+            background: ``
+          }));
+          setError("Image not found")
+      };
     }
   }, [src, width, height]);
 
@@ -86,7 +95,7 @@ const BackgroundImage = props => {
           <div className="bounce3" />
         </div>
       )}
-      <div style={{ position: "relative" }}>{!loading && props.children}</div>
+      <div style={{ position: "relative" }}>{(!loading && !error) && props.children}{error}</div>
     </div>
   );
 };
