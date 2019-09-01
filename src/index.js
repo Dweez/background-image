@@ -28,7 +28,6 @@ function App() {
         color="#56cdad"
         width="100%"
         height="100vh"
-        cover="contain"
       >
         {/*<div className="card"><h2>Your content here</h2></div>*/}
       </BackgroundImage>
