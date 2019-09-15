@@ -7,10 +7,11 @@ import "./styles.css"
 
 function App() {
   const [src, setSrc] = useState("https://source.unsplash.com/featured/?skate")
-
+  
   const refresh = () => {
-    // we deliberately delay loading the new image so that our beautiful spinner is visible :)
+    // reset `src` to trig css event `transition` exit
     setSrc("")
+    // we deliberately delay loading the new image so that our beautiful spinner is visible :)
     setTimeout(
       () =>
         setSrc(
@@ -26,8 +27,9 @@ function App() {
         src={src}
         opacity={.6}
         color="#56cdad"
-        width="100%"
-        height="100vh"
+        // width="100%"
+        // height="100vh"
+        // onClick={refresh}
       >
         {/*<div className="card"><h2>Your content here</h2></div>*/}
       </BackgroundImage>

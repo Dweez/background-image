@@ -15,7 +15,8 @@ const BackgroundImage = props => {
     height,
     radius,
     position,
-    size
+    size,
+    onClick
   } = props
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
@@ -53,6 +54,7 @@ const BackgroundImage = props => {
       return { width: `${intWidth}px`, height: `${heightWRatio}px` }
     } else {
       return { width: width, height: height }
+      // return { width: ghost.current.width, height: ghost.current.height }
     }
   }
 
@@ -92,7 +94,7 @@ const BackgroundImage = props => {
   }, [loading, size, opacity])
 
   return (
-    <div className="bgContainer" style={bgContainerStyle}>
+    <div className="bgContainer" style={bgContainerStyle} onClick={onClick}>
       <div ref={image} className="bg" style={bgStyle} />
       {loading && (
         <Spinner />
@@ -114,7 +116,8 @@ BackgroundImage.propTypes = {
   color: PropTypes.string,
   transition: PropTypes.string,
   radius: PropTypes.string,
-  size: PropTypes.string
+  size: PropTypes.string,
+  onClick: PropTypes.func
 }
 
 BackgroundImage.defaultProps = {
@@ -126,7 +129,8 @@ BackgroundImage.defaultProps = {
   color: "#ccc",
   transition: "1s",
   radius: "0",
-  size: "cover"
+  size: "cover",
+  onClick: () => {}
 }
 
 export default BackgroundImage
