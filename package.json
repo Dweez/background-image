@@ -44,6 +44,16 @@
       "compiler": "bit.envs/compilers/react@1.0.2"
     },
     "componentsDefaultDirectory": "components/{name}",
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "overrides" : {
+      "*": {
+        "dependencies" : {
+          "react": "-"
+        },
+        "peerDependencies" : {
+          "react": "+"
+        }
+      }
+    }
   }
 }
