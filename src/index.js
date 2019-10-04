@@ -27,8 +27,8 @@ function App() {
         src={src}
         opacity={.6}
         color="#56cdad"
-        // width="100%"
-        // height="100vh"
+        width="100%"
+        height="100vh"
         // onClick={refresh}
       >
         {/*<div className="card"><h2>Your content here</h2></div>*/}
