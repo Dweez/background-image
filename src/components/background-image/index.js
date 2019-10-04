@@ -59,6 +59,7 @@ const BackgroundImage = props => {
   }
 
   useEffect(() => {
+    setError(false)
     setLoading(true)
     if (src) {
       ghost.current = new Image()
