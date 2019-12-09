@@ -45,12 +45,12 @@
     },
     "componentsDefaultDirectory": "components/{name}",
     "packageManager": "npm",
-    "overrides" : {
+    "overrides": {
       "*": {
-        "dependencies" : {
+        "dependencies": {
           "react": "-"
         },
-        "peerDependencies" : {
+        "peerDependencies": {
           "react": "+"
         }
       }
