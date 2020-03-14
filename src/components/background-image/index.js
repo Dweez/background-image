@@ -34,7 +34,11 @@ const BackgroundImage = props => {
   
   const [bgStyle, setBgStyle] = useState({
     // background: `url(${src}) no-repeat center center fixed`,
-    background: `url(${src}) no-repeat center center`,
+    // ne pas mixer shortHand et et non-shortHand, unification avec non-shortHand
+    // background: `url(${src}) no-repeat center center`,
+    backgroundUrl: `url(${src})`,
+    backgroundRepeat: `no-repeat`,
+    backgroundPosition: `center center`,
     backgroundSize: size, // cover|auto|contain
     width: width,
     height: height,
